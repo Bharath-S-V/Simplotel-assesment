@@ -1,0 +1,312 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: rgb(255, 253, 208);
+  background: linear-gradient(
+    80deg,
+    rgba(255, 253, 208, 1) 0%,
+    rgb(227 121 216) 100%
+  );
+}
+
+/* Resetting default styles for UL */
+nav ul {
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+/* Styling the list items */
+nav ul li {
+  display: inline;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+/* Styling the links */
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Styling links on hover */
+nav ul li a:hover {
+  color: black;
+}
+
+/* Styling the header */
+header {
+  background-color: #f38383;
+}
+
+/* Adjusting the size of the image */
+nav ul li:last-child img {
+  width: 20px;
+  height: auto;
+}
+
+/* Media query for tablet */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row; /* Stack items vertically */
+    padding: 0; /* Remove padding */
+    justify-content: space-evenly; /* Align items center */
+    list-style-type: none;
+  }
+
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add margin bottom for spacing between items */
+  }
+}
+
+/* Media query for mobile */
+/* Media query for mobile */
+/* Media query for mobile */
+@media (max-width: 480px) {
+  /* Hide all list items except the last one */
+  nav ul li:not(:last-child) {
+    display: none;
+  }
+
+  /* Show the menu bar icon */
+  nav ul li:last-child {
+    display: inline;
+    margin-right: 0;
+    margin-bottom: 10px; /* Add margin bottom for spacing between items */
+    position: absolute;
+    top: 5px;
+    right: 10px; /* Adjust as needed for desired position */
+  }
+
+  /* Adjust font size for smaller screens */
+  nav ul li:last-child a {
+    font-size: 24px;
+  }
+  header {
+    background-color: #f38383;
+    height: 40px;
+  }
+}
+
+/* Styling the banner */
+.banner {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Styling the banner image */
+.banner .image {
+  flex: 1;
+  order: 2; /* Change the order to display image below content on mobile */
+  margin-bottom: 20px; /* Add margin between content and image on mobile */
+}
+
+.banner .image img {
+  width: 100%;
+  height: 100%; /* Adjust height automatically */
+}
+
+/* Styling the banner content */
+.banner .content {
+  flex: 1;
+  padding: 100px; /* Reduce padding on mobile */
+}
+
+.banner .content h1 {
+  color: #333;
+  font-size: 24px; /* Reduce font size for mobile */
+  margin-bottom: 10px; /* Reduce margin bottom for mobile */
+}
+
+.banner .content p {
+  color: #555;
+  font-size: 14px; /* Reduce font size for mobile */
+  margin-bottom: 20px; /* Reduce margin bottom for mobile */
+}
+
+.banner .content .btn {
+  background-color: #f38383;
+  color: white;
+  padding: 8px 20px; /* Adjust button padding for mobile */
+  font-size: 12px; /* Reduce font size for mobile */
+  text-decoration: none;
+}
+
+/* Media query for tablet */
+@media (min-width: 768px) {
+  .banner {
+    flex-direction: row; /* Revert to horizontal layout for tablet and above */
+  }
+
+  .banner .image {
+    order: 1; /* Revert image order to original for tablet and above */
+    margin-bottom: 0; /* Remove margin between content and image for tablet and above */
+    margin-right: 20px; /* Add margin between content and image for tablet and above */
+    flex: 1;
+  }
+
+  .banner .content {
+    flex: 1; /* Adjust content width for tablet and above */
+  }
+
+  .banner .content p {
+    font-size: 10px;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 480px) {
+  .banner {
+    flex-direction: row; /* Revert to horizontal layout for tablet and above */
+  }
+
+  .banner .image {
+    order: 1; /* Revert image order to original for tablet and above */
+    margin-bottom: 0; /* Remove margin between content and image for tablet and above */
+    margin-right: 0px; /* Add margin between content and image for tablet and above */
+    flex: 1;
+  }
+
+  .banner .content {
+    flex: 1; /* Adjust content width for tablet and above */
+    display: none;
+  }
+
+  .banner .content p {
+    font-size: 10px;
+  }
+}
+
+/* Media query for desktop */
+@media (min-width: 1024px) {
+  .banner .content h1 {
+    font-size: 32px; /* Adjust font size for desktop */
+    margin-bottom: 20px; /* Adjust margin bottom for desktop */
+  }
+
+  .banner .content p {
+    font-size: 16px; /* Adjust font size for desktop */
+    margin-bottom: 30px; /* Adjust margin bottom for desktop */
+  }
+
+  .banner .content .btn {
+    padding: 10px 30px; /* Adjust button padding for desktop */
+    font-size: small; /* Revert font size for desktop */
+  }
+}
+
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px;
+}
+
+.collage .content {
+  flex: 1 0 50%; /* Take 50% width */
+  position: relative;
+  background-color: #f38383; /* Semi-transparent background */
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.collage .content img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .collage .image,
+  .collage .content {
+    flex: 1 0 100%; /* On smaller screens, take 100% width */
+  }
+}
+
+.image-grid {
+  --gap: 16px;
+  --num-columns: 3;
+  --row-height: 300px;
+  box-sizing: border-box;
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(var(--num-columns), 2fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  height: 50%;
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}
+.collage {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+}
+
+.collage .image-grid {
+  width: 50%;
+}
+
+.collage .content1 {
+  width: 50%;
+  background-color: #f38383; /* Background color for content */
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.collage .content1 img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .collage .image-grid,
+  .collage .content1 {
+    width: 100%; /* On smaller screens, take 100% width */
+  }
+  .image-grid {
+    height: auto; /* Adjust height to auto to accommodate varying screen sizes */
+  }
+  .collage {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+  }
+}
